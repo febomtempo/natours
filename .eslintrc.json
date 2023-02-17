@@ -7,6 +7,9 @@
   "plugins": [
     "prettier"
   ],
+  "engine": {
+    "node": ">=18"
+  },
   "rules": {
     "prettier/prettier": [
       "error",
