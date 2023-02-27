@@ -37,13 +37,15 @@ const reviewSchema = new mongoose.Schema(
   }
 );
 
+reviewSchema.index({ tour: 1, user: 1 }, { unique: true });
+
 reviewSchema.pre(/^find/, function (next) {
   // this.populate({
   //   path: 'tour',
-  //   select: 'name',
+  //   select: 'name'
   // }).populate({
   //   path: 'user',
-  //   select: 'name photo',
+  //   select: 'name photo'
   // });
 
   this.populate({
@@ -88,15 +90,8 @@ reviewSchema.post('save', function () {
 
 // findByIdAndUpdate
 // findByIdAndDelete
-reviewSchema.pre(/^findOneAnd/, async function (next) {
-  this.r = await this.findOne();
-  // console.log(this.r);
-  next();
-});
-
-reviewSchema.post(/^findOneAnd/, async function () {
-  // await this.findOne(); does NOT work here, query has already executed
-  await this.r.constructor.calcAverageRatings(this.r.tour);
+reviewSchema.post(/^findOneAnd/, async function (doc) {
+  if (doc) Review.calcAverageRatings(doc.tour); // Use Review
 });
 
 const Review = mongoose.model('Review', reviewSchema);
