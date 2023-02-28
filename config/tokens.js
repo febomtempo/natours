@@ -1,2 +1,0 @@
-exports.MAPBOX_ACCESS_TOKEN =
-  'pk.eyJ1IjoiZmVib210ZW1wbyIsImEiOiJjbGVvb3NnanIwNGZ3NDNteHB4bzJ0dWJ0In0.pFFKCgOyNZl_VDwv5DgWwg';
