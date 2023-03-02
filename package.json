@@ -2,13 +2,13 @@
   "name": "natours",
   "version": "1.0.0",
   "description": "",
-  "main": "bundle.js",
+  "source": "public/js/index.js",
   "scripts": {
     "start": "nodemon server.js",
     "start:prod": "NODE_ENV=production nodemon server.js",
     "debug": "ndb server.js",
-    "watch:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js",
-    "build:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js"
+    "watch": "parcel watch --dist-dir ./public/dist/",
+    "build:js": "parcel watch --dist-dir ./public/dist/"
   },
   "author": "Felipe",
   "license": "ISC",
@@ -29,6 +29,7 @@
     "multer": "^1.4.5-lts.1",
     "nodemailer": "^6.9.1",
     "pug": "^3.0.2",
+    "regenerator-runtime": "^0.13.11",
     "sharp": "^0.31.3",
     "slugify": "^1.6.5",
     "validator": "^13.9.0",
@@ -45,7 +46,7 @@
     "eslint-plugin-react": "^7.32.2",
     "ndb": "^1.1.5",
     "nodemon": "^2.0.20",
-    "parcel-bundler": "^1.12.5",
+    "parcel": "^2.8.3",
     "prettier": "^2.8.3",
     "process": "^0.11.10"
   }
