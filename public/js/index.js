@@ -1,3 +1,4 @@
+/* eslint-disable */
 import 'core-js/stable';
 import { displayMap } from './mapbox';
 import { login, logout } from './login';
