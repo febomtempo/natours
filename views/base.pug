@@ -8,6 +8,20 @@ html
       link(rel='shortcut icon' type='image/png' href='/img/favicon.png')
       link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:300,300i,700')
       title Natours | #{title}
+      meta(name='title' content='Natours ')
+      meta(name='description' content='The best tour booking website!')
+      //- Open Graph / Facebook
+      meta(property='og:type' content='website')
+      meta(property='og:url' content='https://metatags.io/')
+      meta(property='og:title' content='Natours ')
+      meta(property='og:description' content='The best tour booking website!')
+      meta(property='og:image' content='/public/img/logo-green-round.png')
+      //- Twitter
+      meta(property='twitter:card' content='summary_large_image')
+      meta(property='twitter:url' content='https://metatags.io/')
+      meta(property='twitter:title' content='Natours ')
+      meta(property='twitter:description' content='The best tour booking website!')
+      meta(property='twitter:image' content='/public/img/logo-green-round.png')
 
   body(data-alert=`${alert ? alert : ''}`)
     // HEADER
@@ -25,7 +39,3 @@ html
     //- script(src='/js/login.js')
     script(src='https://js.stripe.com/v3/')
     script(src='/dist/index.js')
-    
-
-
-
